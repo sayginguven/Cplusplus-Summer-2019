@@ -6,19 +6,11 @@
 //  Copyright © 2019 Saygin Guven. All rights reserved.
 //
 
-//one way is adding all your std separately
-//using std::cout;
-//using std::endl;
 
-//or using a general namespace for std
-//using namespace std;
-
-
-#ifndef functions_hpp
-#define functions_hpp
+#pragma once
 
 #include <iostream>
 void someDataTypes(void);
-
-
-#endif /* functions_hpp */
+void push(int val);
+void pop();
+void printStack();

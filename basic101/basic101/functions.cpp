@@ -6,7 +6,18 @@
 //  Copyright © 2019 Saygin Guven. All rights reserved.
 //
 
+//one way is adding all your std separately
+//using std::cout;
+//using std::endl;
+
+//or using a general namespace for std
+//using namespace std;
+
 #include "functions.hpp"
+
+//global variables
+int stackArr[100];
+int ToS {0};
 
 void someDataTypes(){
         //same output different methods
@@ -106,4 +117,16 @@ void someDataTypes(){
     
     std::cout <<std::endl;
 
+}
+
+void push(int val){
+
+}
+
+void pop(){
+    
+}
+
+void printStack(){
+    
 }
