@@ -24,9 +24,47 @@ int main() {
     std::cout << "Hello, World!" << std::endl;
     
     
+    std::cout << "give me a number : " << std::endl;
+    int number1;
+    std::cin >> number1;
     
     
+    std::cout << "give me one more number : " << std::endl;
+    int number2;
+    std::cin >> number2;
     
+    std::cout << "your numbers are " << number1 << ", " << number2 << std::endl;
+    
+    std::cout << "the addition of those 2 numbers are " << number1 + number2 << std::endl;
+    //dynamic casting -- run time
+    std::cout << "the average of those 2 numbers are " << (double)(number1 + number2)/2 << std::endl;
+    //static casting -- compile time
+    std::cout << "the average of those 2 numbers are " << static_cast<double>(number1 + number2)/2  << std::endl;
+
+    
+    std::cout << "_________________" << std::endl;
+    std::cout << "size of bool " << sizeof(bool) << " bytes." << std::endl;
+    std::cout << "size of char " << sizeof(char) << " byte." << std::endl;
+    std::cout << "size of short " << sizeof(short) << " bytes." << std::endl;
+    std::cout << "size of integer " << sizeof(int) << " bytes." << std::endl;
+    std::cout << "size of double " << sizeof(double) << " bytes." << std::endl;
+    std::cout << "size of float " << sizeof(float) << " bytes." << std::endl;
+    std::cout << "size of long " << sizeof(long) << " bytes." << std::endl;
+    std::cout << "size of long double " << sizeof(long double) << " bytes." << std::endl;
+    
+    std::cout << "______MIN________" << std::endl;
+    std::cout << "MIN value of integer " << INT_MIN << std::endl;
+    std::cout << "MIN value of char " << CHAR_MIN << std::endl;
+    std::cout << "MIN value of long " << LONG_MIN << std::endl;
+
+
+    std::cout << "______MAX________" << std::endl;
+    std::cout << "MAX value of integer " << INT_MAX << std::endl;
+    std::cout << "MAX value of char " << CHAR_MAX << std::endl;
+    std::cout << "MAX value of long " << LONG_MAX << std::endl;
+    //unsigned values are for just positive numbers
+    std::cout << "MAX value of unsigned int " << UINT_MAX << std::endl;
+
     
     return 0;
 }
