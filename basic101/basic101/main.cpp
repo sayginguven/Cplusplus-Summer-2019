@@ -8,8 +8,25 @@
 
 #include <iostream>
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
+//one way is adding all your std separately
+//using std::cout;
+//using std::endl;
+
+//or using a general namespace for std
+//using namespace std;
+
+
+int main() {
+    
+    //same output different methods
     std::cout << "Hello, World!\n";
+    std::cout << "Hello, World!\x0A";
+    std::cout << "Hello, World!" << std::endl;
+    
+    
+    
+    
+    
+    
     return 0;
 }
