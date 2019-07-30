@@ -6,11 +6,12 @@
 //  Copyright © 2019 Saygin Guven. All rights reserved.
 //
 
-
 #pragma once
 
-#include <iostream>
 void someDataTypes(void);
+void menu();
 void push(int val);
 void pop();
 void printStack();
+
+

@@ -14,9 +14,12 @@
 //using namespace std;
 
 #include "functions.hpp"
+#include <iostream>
+
 
 //global variables
-int stackArr[100];
+const int stackSize = 100;
+int stackArr[stackSize];
 int ToS {0};
 
 void someDataTypes(){
@@ -119,8 +122,56 @@ void someDataTypes(){
 
 }
 
-void push(int val){
 
+
+void menu(){
+    
+    std::cout << "Please Enter your name?";
+    std::string Username;
+    std::cin >> Username;
+    int option {4};
+    
+    do
+    {
+        
+        std::cout << "Welcome ";
+        std::cout << Username<< std::endl;
+        std::cout << "************** MAIN MENU ****************" << std::endl;
+        std::cout << "Please Enter one of the following Choices" << std::endl;
+        std::cout << "************** MAIN MENU ****************\n" << std::endl;;
+        std::cout << "1. Push a value in Stack" << std::endl;
+        std::cout << "2. Pop a value from Stack" << std::endl;
+        std::cout << "3. Print Stack" << std::endl;
+        std::cout << "4: Exit The Program" << std::endl;
+        std::cin >> option;
+        // Print Your choices here
+        
+        switch (option)
+        {
+            case 1:
+                  std::cout << "Please give me an integer value to push?";
+                  int val;
+                  std::cin >> val;
+                  push(val);
+                break;
+            case 2:
+                pop();
+                break;
+            case 3:
+                printStack();
+                break;
+            case 4:
+                return;
+            default:
+                std::cout << "ops that doesnt exist." << std::endl;
+        }
+    } while ( option != 4);
+    
+    
+}
+
+void push(int val){
+    
 }
 
 void pop(){
