@@ -18,9 +18,86 @@
 #include <string>
 
 //global variables
-const int stackSize = 100;
-int stackArr[stackSize] = {0};
-int ToS {-1};
+const int stackSizeStaticArr = 100;
+int staticStackArr[stackSizeStaticArr] = {0};
+int stackToS {-1};
+
+struct MyStack
+{
+    int * StackAddr;
+    int StackSize;
+};
+MyStack MyStack;
+
+int * TosWithPointer;
+
+void InitStack(){
+    
+    std::cout<< "What will be the size of stack? : ";
+    std::cin >> MyStack.StackSize;
+    MyStack.StackAddr = (int *) malloc(sizeof(int)*MyStack.StackSize);
+    
+    TosWithPointer = MyStack.StackAddr;
+    int * CurrentElement;
+    CurrentElement = MyStack.StackAddr;
+    for (int i = 0; i < MyStack.StackSize; i+=1)
+    {
+        *CurrentElement = 0;
+        CurrentElement+=1;
+    }
+    std::cout << "Your Stack is Initialized with "<< MyStack.StackSize <<" zeros" << std::endl;
+
+}
+
+bool PushWithPointer(int value){
+    
+    if(TosWithPointer == MyStack.StackAddr + MyStack.StackSize){
+        message("stack is full");
+        return false;
+    }
+    
+    *TosWithPointer  = value;
+    TosWithPointer +=1;
+    return true;
+
+}
+
+int PopWithPointer(){
+    
+    if(TosWithPointer == MyStack.StackAddr){
+        message("stack is empty");
+        return -1;
+    }
+    
+    int * currentValue = TosWithPointer-1;
+    int poppedValue = *(currentValue);
+    *currentValue = 0;
+    TosWithPointer -= 1;
+    return poppedValue;
+    
+}
+
+void PrintStackWithPointer()
+{
+    if (TosWithPointer == MyStack.StackAddr)
+    {
+       message("Stack is Empty");
+       return;
+    }
+
+    int * currentElement;
+    currentElement = TosWithPointer - 1 ;
+    while (currentElement >= MyStack.StackAddr)
+    {
+        if (*currentElement != 0)
+        {
+            std::cout << *currentElement << std::endl;
+        }
+        currentElement-=1;
+    }
+}
+
+
 
 void someDataTypes(){
         //same output different methods
@@ -124,7 +201,7 @@ void someDataTypes(){
 
 
 
-void stackMenu(){
+void stackMenuWithStaticArr(){
     
     std::cout << "Please Enter your name?";
     std::string Username;
@@ -170,15 +247,66 @@ void stackMenu(){
     
 }
 
+void stackMenuWithPointer(){
+    
+    std::cout << "Please Enter your name?";
+    std::string Username;
+    std::cin >> Username;
+    int option {5};
+    
+    do
+    {
+        
+        std::cout << "Welcome ";
+        std::cout << Username<< std::endl;
+        std::cout << "************** MAIN MENU ****************" << std::endl;
+        std::cout << "Please Enter one of the following Choices" << std::endl;
+        std::cout << "************** MAIN MENU ****************\n" << std::endl;
+        std::cout << "1. Init the stack" << std::endl;
+        std::cout << "2. Push a value in Stack" << std::endl;
+        std::cout << "3. Pop a value from Stack" << std::endl;
+        std::cout << "4. Print Stack" << std::endl;
+        std::cout << "5: Exit The Program" << std::endl;
+        std::cin >> option;
+        // Print Your choices here
+        
+        switch (option)
+        {
+            case 1:
+                InitStack();
+                break;
+            case 2:
+                std::cout << "Please give me an integer value to push?";
+                int val;
+                std::cin >> val;
+                PushWithPointer(val);
+                break;
+            case 3:
+                std::cout << PopWithPointer() << " is popped."<< std::endl;;
+                break;
+            case 4:
+                PrintStackWithPointer();
+                break;
+            case 5:
+                return;
+            default:
+                std::cout << "ops that doesnt exist." << std::endl;
+        }
+    } while ( option != 5);
+    
+    
+}
+
+
 bool push(int val){
 
-    if(ToS >= stackSize-1){
+    if(stackToS >= stackSizeStaticArr-1){
         message("sorry stack is full!");
         return false;
     }
     
-    ToS+=1;
-    stackArr[ToS] = val;
+    stackToS+=1;
+    staticStackArr[stackToS] = val;
 
     return true;
     
@@ -186,14 +314,14 @@ bool push(int val){
 
 void pop(){
     
-    if(ToS < 0 ){
+    if(stackToS < 0 ){
         message("sorry stack is empty!");
         return;
     }
     
     //pop the top of stack assign the value to 0;
-    stackArr[ToS] = 0;
-    ToS-=1;
+    staticStackArr[stackToS] = 0;
+    stackToS-=1;
     
     
 }
@@ -203,14 +331,14 @@ void printStack(){
   
     //if stack is empty
     // error message
-    if(ToS < 0){
+    if(stackToS < 0){
         message("sorry stack is empty!");
         return;
     }
    
     //call the pop message and empty the stack
-    while(ToS >= 0){
-        std::cout << stackArr[ToS] << " ";
+    while(stackToS >= 0){
+        std::cout << staticStackArr[stackToS] << " ";
         pop();
     }
    

@@ -10,9 +10,13 @@
 #include <string>
 
 void someDataTypes(void);
-void stackMenu();
+void stackMenuWithStaticArr();
 bool push(int val);
 void pop();
 void printStack();
 void message(std::string );
-
+void InitStack();
+bool PushWithPointer(int);
+int PopWithPointer();
+void PrintStackWithPointer();
+void stackMenuWithPointer();

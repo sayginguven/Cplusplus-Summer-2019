@@ -9,11 +9,13 @@
 #include <iostream>
 #include <string>
 #include "functions.hpp"
+#include <stack>
 
 
 int main() {
 
-    stackMenu();
+    
+    stackMenuWithPointer();
     
     return 0;
 }
