@@ -7,11 +7,12 @@
 //
 
 #pragma once
+#include <string>
 
 void someDataTypes(void);
-void menu();
-void push(int val);
+void stackMenu();
+bool push(int val);
 void pop();
 void printStack();
-
+void message(std::string );
 

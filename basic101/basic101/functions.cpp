@@ -15,12 +15,12 @@
 
 #include "functions.hpp"
 #include <iostream>
-
+#include <string>
 
 //global variables
 const int stackSize = 100;
-int stackArr[stackSize];
-int ToS {0};
+int stackArr[stackSize] = {0};
+int ToS {-1};
 
 void someDataTypes(){
         //same output different methods
@@ -124,7 +124,7 @@ void someDataTypes(){
 
 
 
-void menu(){
+void stackMenu(){
     
     std::cout << "Please Enter your name?";
     std::string Username;
@@ -149,10 +149,10 @@ void menu(){
         switch (option)
         {
             case 1:
-                  std::cout << "Please give me an integer value to push?";
-                  int val;
-                  std::cin >> val;
-                  push(val);
+                std::cout << "Please give me an integer value to push?";
+                int val;
+                std::cin >> val;
+                push(val);
                 break;
             case 2:
                 pop();
@@ -170,14 +170,56 @@ void menu(){
     
 }
 
-void push(int val){
+bool push(int val){
+
+    if(ToS >= stackSize-1){
+        message("sorry stack is full!");
+        return false;
+    }
+    
+    ToS+=1;
+    stackArr[ToS] = val;
+
+    return true;
     
 }
 
 void pop(){
     
+    if(ToS < 0 ){
+        message("sorry stack is empty!");
+        return;
+    }
+    
+    //pop the top of stack assign the value to 0;
+    stackArr[ToS] = 0;
+    ToS-=1;
+    
+    
 }
 
 void printStack(){
     
+  
+    //if stack is empty
+    // error message
+    if(ToS < 0){
+        message("sorry stack is empty!");
+        return;
+    }
+   
+    //call the pop message and empty the stack
+    while(ToS >= 0){
+        std::cout << stackArr[ToS] << " ";
+        pop();
+    }
+   
+    std::cout << std::endl;
+    
 }
+
+void message(std::string msg){
+    std::cout << msg << std::endl;
+}
+
+
