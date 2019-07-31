@@ -65,6 +65,8 @@ bool PushWithPointer(int value){
 int PopWithPointer(){
     
     if(TosWithPointer == MyStack.StackAddr){
+        //the only bug is when the stack is empty
+        // it will return -1
         message("stack is empty");
         return -1;
     }
@@ -91,10 +93,14 @@ void PrintStackWithPointer()
     {
         if (*currentElement != 0)
         {
-            std::cout << *currentElement << std::endl;
+            std::cout << *currentElement << " ";
+            PopWithPointer();
         }
         currentElement-=1;
     }
+    
+    std::cout << std::endl;
+    
 }
 
 
