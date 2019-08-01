@@ -20,4 +20,11 @@ void testReverseTheWord();
 //define default parameters in your prototype
 void mimosa(std::string = "orange juice", std::string = "champaign");
 void testMimosa();
+
+int add(int a, int b);
+
+//signature for modify do not forget to add & reference key
+int modify( int a, int &b, int &c );
+
+void testModifyAndAdd();
 #endif /* moreFunctions_hpp */
