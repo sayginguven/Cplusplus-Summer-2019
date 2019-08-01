@@ -149,3 +149,40 @@ void forEachLoop(){
     }
     
 }
+
+
+void printMultipicationTable(int rowVal, int columnVal){
+    
+    
+    //challange with arrays
+    
+    //create 2 dimensional array
+    //initialize the values with multiplication table
+    
+    int multNumbers[rowVal][columnVal] ;
+    
+    //                 11*11*4 bytes/           11*4 bytes
+    int rows = (int)sizeof(multNumbers) / (int)sizeof(multNumbers[0]);
+    //                        11*4 bytes  /    4 bytes
+    int columns = (int)sizeof(multNumbers[0]) / (int)sizeof(int);
+    
+    for (int i =0; i < rows; i+=1) {
+        
+        for (int j =0; j < columns; j+=1){
+            
+            if(i ==0) {
+                multNumbers[i][j] = j;
+            } else if(j == 0) {
+                multNumbers[i][j] = i;
+            } else {
+                multNumbers[i][j] = i*j;
+            }
+            
+            std::cout << "\t" << multNumbers[i][j];
+            
+        }
+        std::cout << std::endl;
+    }
+    
+    
+}

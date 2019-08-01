@@ -29,4 +29,8 @@ int modify( int a, int &b, int &c );
 void testModifyAndAdd();
 
 void forEachLoop();
+
+void printMultipicationTable(int,int);
+
 #endif /* moreFunctions_hpp */
+
