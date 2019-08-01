@@ -124,3 +124,28 @@ void testModifyAndAdd(){
 }
 
 
+void forEachLoop(){
+    
+    // explicitly declare f letter to declare this is float number
+    float numbers[10] {1.1f, 2.2f, 3.3f, 4.4f, 5.5f, 6.6f, 7.7f, 8.8f, 9.9f, 10.1f};
+    
+    // explicitly declare L letter to declare this is float number
+    // you can use lower case l but it may conflict with number 1(one)
+    long longNumbers[10] {100000L, 20000L, 30000L, 40000L, 50000L, 60000L, 70000L, 80000L, 90000L, 1000000L};
+    
+    std::cout << "FLOAT NUMBERS" <<std::endl;
+    for(float number : numbers){
+        //each number in the array is represented as number
+        std::cout << number <<std::endl;
+        
+    }
+    std::cout << "___________________" <<std::endl;
+    
+    std::cout << "LONG NUMBERS" <<std::endl;
+    for(long number : longNumbers){
+        //each number in the array is represented as number
+        std::cout << number <<std::endl;
+        
+    }
+    
+}

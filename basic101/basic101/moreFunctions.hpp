@@ -27,4 +27,6 @@ int add(int a, int b);
 int modify( int a, int &b, int &c );
 
 void testModifyAndAdd();
+
+void forEachLoop();
 #endif /* moreFunctions_hpp */
