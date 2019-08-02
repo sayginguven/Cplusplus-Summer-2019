@@ -9,6 +9,8 @@
 #include "moreFunctions.hpp"
 #include <string>
 #include <iostream>
+#include <vector>
+
 
 bool isPrime(int value){
    
@@ -87,6 +89,9 @@ void testMimosa(){
 }
 
 int add(int a, int b){
+    static int z = 10;
+    z+=1;
+    std::cout << "static z value is : " << z << "\n";
     return a+b;
 }
 
@@ -183,6 +188,76 @@ void printMultipicationTable(int rowVal, int columnVal){
         }
         std::cout << std::endl;
     }
+    
+    
+}
+
+// 0 1 2 3 4 5 6 7  8
+// 0 1 1 2 3 5 8 13 21 34 55 ...
+
+long long int fibo(unsigned int order){
+    
+    if(order == 0){
+        return 0;
+    }
+    
+    if(order == 1){
+        return 1;
+    }
+    
+    return fibo(order-1) + fibo(order-2);
+    
+}
+
+// 5! = 5 * 4 * 3 * 2 * 1
+// 5! = 5 * 4!
+
+long long int factorial(unsigned int number){
+    
+    if(number <= 1){
+        return 1;
+    }
+    
+    return number * factorial(number-1);
+    
+}
+
+void vectorExample(){
+    //what is the problem of array?
+    //when we can use array?
+    //size and type
+    
+    //dynamic array ---- vector
+    std::vector<std::string> students {"sina", "siamak", "hamed", "mariana",
+        "jose", "daniel"
+    };
+    
+    std::cout << "these are the students in our class" << std::endl;
+    std::cout << "there are " << students.size() << " students."  << std::endl;
+    std::cout << "capacity is : " << students.capacity() << std::endl;
+    
+    for (auto student : students) {
+        std::cout << student << " ";
+    }
+    
+    std::cout << "who is the new student? " ;
+    std::string newStudent;
+    std::cin >> newStudent;
+    students.push_back(newStudent);
+    
+    
+    std::cout << std::endl;
+    
+    std::cout << "____ new list ___" << std::endl;
+    std::cout << "there are " << students.size() << " students."  << std::endl;
+    std::cout << "capacity is : " << students.capacity() << std::endl;
+    for (auto student : students) {
+        std::cout << student << " ";
+    }
+    
+    
+    std::cout << std::endl;
+    
     
     
 }

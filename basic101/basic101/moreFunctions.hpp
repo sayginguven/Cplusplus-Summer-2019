@@ -32,5 +32,11 @@ void forEachLoop();
 
 void printMultipicationTable(int,int);
 
+long long int fibo(unsigned int order);
+
+long long int factorial(unsigned int number);
+
+void vectorExample();
+
 #endif /* moreFunctions_hpp */
 
