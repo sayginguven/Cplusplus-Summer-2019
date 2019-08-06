@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3C16D24622EF5139007E340C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3C16D24522EF5139007E340C /* main.cpp */; };
 		3C16D24E22EF7118007E340C /* functions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3C16D24C22EF7118007E340C /* functions.cpp */; };
+		3CA45D2C22F4B75A00A11509 /* Cat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3CA45D2A22F4B75A00A11509 /* Cat.cpp */; };
 		3CE64D5022F1F421002C47EE /* moreFunctions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3CE64D4E22F1F421002C47EE /* moreFunctions.cpp */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,8 @@
 		3C16D24522EF5139007E340C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		3C16D24C22EF7118007E340C /* functions.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = functions.cpp; sourceTree = "<group>"; };
 		3C16D24D22EF7118007E340C /* functions.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = functions.hpp; sourceTree = "<group>"; };
+		3CA45D2A22F4B75A00A11509 /* Cat.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Cat.cpp; sourceTree = "<group>"; };
+		3CA45D2B22F4B75A00A11509 /* Cat.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Cat.hpp; sourceTree = "<group>"; };
 		3CE64D4E22F1F421002C47EE /* moreFunctions.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = moreFunctions.cpp; sourceTree = "<group>"; };
 		3CE64D4F22F1F421002C47EE /* moreFunctions.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = moreFunctions.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -47,6 +50,7 @@
 		3C16D23922EF5138007E340C = {
 			isa = PBXGroup;
 			children = (
+				3CA45D2922F4B70200A11509 /* OOP */,
 				3C16D24422EF5139007E340C /* basic101 */,
 				3C16D24322EF5139007E340C /* Products */,
 			);
@@ -70,6 +74,15 @@
 				3CE64D4F22F1F421002C47EE /* moreFunctions.hpp */,
 			);
 			path = basic101;
+			sourceTree = "<group>";
+		};
+		3CA45D2922F4B70200A11509 /* OOP */ = {
+			isa = PBXGroup;
+			children = (
+				3CA45D2A22F4B75A00A11509 /* Cat.cpp */,
+				3CA45D2B22F4B75A00A11509 /* Cat.hpp */,
+			);
+			path = OOP;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CA45D2C22F4B75A00A11509 /* Cat.cpp in Sources */,
 				3C16D24622EF5139007E340C /* main.cpp in Sources */,
 				3CE64D5022F1F421002C47EE /* moreFunctions.cpp in Sources */,
 				3C16D24E22EF7118007E340C /* functions.cpp in Sources */,
