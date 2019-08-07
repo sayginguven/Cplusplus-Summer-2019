@@ -20,3 +20,5 @@ bool PushWithPointer(int);
 int PopWithPointer();
 void PrintStackWithPointer();
 void stackMenuWithPointer();
+void catTest();
+void timeTest();

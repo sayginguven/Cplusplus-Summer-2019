@@ -11,6 +11,8 @@
 #include <ctype.h>
 
 
+int Cat::count = 0;
+
 Cat::Cat() :
 Cat("unknown","white",true,0,0){
     std::cout << " default constructor called " << std::endl;
@@ -31,6 +33,9 @@ Cat::Cat(std::string name, std::string color, bool single,
     this->single = single;
     this->weight = weight;
     this->health = health;
+    
+    //increment whenever an object is created
+    count += 1;
 }
 
 //copy constructor
@@ -42,12 +47,15 @@ Cat::Cat(const Cat &obj){
     this->weight = obj.weight;
     this->health = obj.health;
     
+    count += 1;
+    
 }
 
 
 //destructor
 Cat::~Cat(){
     std::cout << " destructor called " << this->name << " is dead!" << std::endl;
+    count -= 1;
 }
 
 //setters

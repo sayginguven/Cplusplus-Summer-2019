@@ -14,6 +14,9 @@
 //using namespace std;
 
 #include "functions.hpp"
+#include "../OOP/Cat.hpp"
+#include "../OOP/Time.hpp"
+
 #include <iostream>
 #include <string>
 
@@ -357,4 +360,66 @@ void message(std::string msg){
 }
 
 
+void catTest(){
+    
+    //check how many cats in the memory
+    std::cout << Cat::howManyObject() << " objects in the memory" << std::endl;
+    
+    if(1==1){
+        //default constructor will be called
+        Cat delegatedCat{};
+        delegatedCat.introduceYourself();
+        delegatedCat.jump();
+        
+    }
+    
+    std::cout << Cat::howManyObject() << " objects in the memory" << std::endl;
+    
+    std::cout << "_____________" << std::endl;
+    Cat fluffy("Fluffy", "Black and white", false, 10.4, 100);
+    fluffy.introduceYourself();
+    fluffy.eat();
+    
+    
+    std::cout << "_____________" << std::endl;
+    //C++11 syntax
+    Cat sylvester {"Sylvester","White",true, 5.4,95};
+    sylvester.introduceYourself();
+    sylvester.sleep();
+    
+    std::cout << "_____________" << std::endl;
+    Cat kit{"Homer", 100 };
+    kit.introduceYourself();
+    kit.eat();
+    kit.jump();
+    
+    std::cout << "_____________" << std::endl;
+    Cat copyFluffy(fluffy);
+    copyFluffy.introduceYourself();
+    
+    
+    std::cout << "_____________" << std::endl;
+    
+    std::cout << Cat::howManyObject() << " objects in the memory" << std::endl;
+}
 
+void timeTest(){
+    
+    Time def;
+    Time over1{"AM",1,2,3};
+    Time over2{6,56,"PM"};
+    Time over2withoutDef{6,56};
+    
+    def.whatTimeIsIt();
+    def.shortTime();
+    
+    over1.whatTimeIsIt();
+    over1.shortTime();
+    
+    
+    over2.whatTimeIsIt();
+    over2.shortTime();
+    
+    over2withoutDef.whatTimeIsIt();
+    over2withoutDef.shortTime();
+}
