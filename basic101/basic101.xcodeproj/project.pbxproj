@@ -12,6 +12,7 @@
 		3C16D24E22EF7118007E340C /* functions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3C16D24C22EF7118007E340C /* functions.cpp */; };
 		3CA45D2C22F4B75A00A11509 /* Cat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3CA45D2A22F4B75A00A11509 /* Cat.cpp */; };
 		3CE64D5022F1F421002C47EE /* moreFunctions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3CE64D4E22F1F421002C47EE /* moreFunctions.cpp */; };
+		3CFC8E4F22FCA2690074AB2F /* Employee.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3CFC8E4D22FCA2690074AB2F /* Employee.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,14 +30,19 @@
 /* Begin PBXFileReference section */
 		3C0147DA22FB416B003A8699 /* Time.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Time.cpp; sourceTree = "<group>"; };
 		3C0147DB22FB416B003A8699 /* Time.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Time.hpp; sourceTree = "<group>"; };
+		3C032EC222FDD69B00A54333 /* Shallow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Shallow.h; sourceTree = "<group>"; };
+		3C032EC322FDE9F800A54333 /* Deep.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Deep.h; sourceTree = "<group>"; };
 		3C16D24222EF5139007E340C /* basic101 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = basic101; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C16D24522EF5139007E340C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		3C16D24C22EF7118007E340C /* functions.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = functions.cpp; sourceTree = "<group>"; };
 		3C16D24D22EF7118007E340C /* functions.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = functions.hpp; sourceTree = "<group>"; };
+		3C5FAAA52301C9430011B512 /* test.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = test.txt; sourceTree = "<group>"; };
 		3CA45D2A22F4B75A00A11509 /* Cat.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Cat.cpp; sourceTree = "<group>"; };
 		3CA45D2B22F4B75A00A11509 /* Cat.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Cat.hpp; sourceTree = "<group>"; };
 		3CE64D4E22F1F421002C47EE /* moreFunctions.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = moreFunctions.cpp; sourceTree = "<group>"; };
 		3CE64D4F22F1F421002C47EE /* moreFunctions.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = moreFunctions.hpp; sourceTree = "<group>"; };
+		3CFC8E4D22FCA2690074AB2F /* Employee.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Employee.cpp; sourceTree = "<group>"; };
+		3CFC8E4E22FCA2690074AB2F /* Employee.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Employee.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +59,7 @@
 		3C16D23922EF5138007E340C = {
 			isa = PBXGroup;
 			children = (
+				3C5FAAA42301C8D30011B512 /* Files */,
 				3CA45D2922F4B70200A11509 /* OOP */,
 				3C16D24422EF5139007E340C /* basic101 */,
 				3C16D24322EF5139007E340C /* Products */,
@@ -79,13 +86,25 @@
 			path = basic101;
 			sourceTree = "<group>";
 		};
+		3C5FAAA42301C8D30011B512 /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				3C5FAAA52301C9430011B512 /* test.txt */,
+			);
+			path = Files;
+			sourceTree = "<group>";
+		};
 		3CA45D2922F4B70200A11509 /* OOP */ = {
 			isa = PBXGroup;
 			children = (
+				3C032EC222FDD69B00A54333 /* Shallow.h */,
+				3C032EC322FDE9F800A54333 /* Deep.h */,
 				3CA45D2A22F4B75A00A11509 /* Cat.cpp */,
 				3CA45D2B22F4B75A00A11509 /* Cat.hpp */,
 				3C0147DA22FB416B003A8699 /* Time.cpp */,
 				3C0147DB22FB416B003A8699 /* Time.hpp */,
+				3CFC8E4D22FCA2690074AB2F /* Employee.cpp */,
+				3CFC8E4E22FCA2690074AB2F /* Employee.hpp */,
 			);
 			path = OOP;
 			sourceTree = "<group>";
@@ -151,6 +170,7 @@
 				3CE64D5022F1F421002C47EE /* moreFunctions.cpp in Sources */,
 				3C16D24E22EF7118007E340C /* functions.cpp in Sources */,
 				3C0147DC22FB416B003A8699 /* Time.cpp in Sources */,
+				3CFC8E4F22FCA2690074AB2F /* Employee.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

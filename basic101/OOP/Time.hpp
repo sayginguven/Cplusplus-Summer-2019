@@ -43,6 +43,7 @@ public:
     //if you instantiate your object with 2 parameters day will be automatically "AM"
     //if you instantiate your object with 3 parameters day will be assigned whatever the value is "AM" or "PM"
     Time(int hour, int minute, std::string day = "AM");
+//    Time(int hour, int minute);
     
     
     ~Time();

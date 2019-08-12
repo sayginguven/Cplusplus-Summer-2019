@@ -22,3 +22,5 @@ void PrintStackWithPointer();
 void stackMenuWithPointer();
 void catTest();
 void timeTest();
+void employeeTest();
+

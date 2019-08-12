@@ -1,0 +1,7 @@
+daniel 22 0
+jose 27 1
+mariana 25 1
+sina 29 0
+siamak 45 1
+eduardo 22 0
+hamed 29 0

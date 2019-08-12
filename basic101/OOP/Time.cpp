@@ -51,6 +51,12 @@ Time:: Time(int hour, int minute, std::string day)
     
 }
 
+//assign the valies to the properties automatically with : operator
+//Time::Time(int hour, int minute)
+//: hour{hour}, minute{minute}{
+//    
+//}
+
 Time::Time(std::string day, int hour, int minute, int second){
     
     //check and convert the day to upper case

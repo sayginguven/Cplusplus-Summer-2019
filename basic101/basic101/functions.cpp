@@ -16,6 +16,9 @@
 #include "functions.hpp"
 #include "../OOP/Cat.hpp"
 #include "../OOP/Time.hpp"
+#include "../OOP/Employee.hpp"
+#include "../OOP/Shallow.h"
+#include "../OOP/Deep.h"
 
 #include <iostream>
 #include <string>
@@ -422,4 +425,24 @@ void timeTest(){
     
     over2withoutDef.whatTimeIsIt();
     over2withoutDef.shortTime();
+}
+
+void employeeTest(){
+    
+    Employee *emp1 = new Employee{"saygin", new Time{11,47,"AM"}};
+    // 2 ways
+    
+    //using pointers to access the object method
+    (emp1->getTime())->shortTime();
+    
+    //using what pointer is pointing to to access the object method
+    (*((*emp1).getTime())).shortTime();
+}
+
+void printObject(Shallow obj) {
+    std::cout << obj.getData();
+}
+
+void printObject(Deep obj) {
+    std::cout << obj.getData();
 }

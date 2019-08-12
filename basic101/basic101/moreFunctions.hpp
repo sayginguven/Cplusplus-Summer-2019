@@ -38,5 +38,7 @@ long long int factorial(unsigned int number);
 
 void vectorExample();
 
+
+
 #endif /* moreFunctions_hpp */
 
