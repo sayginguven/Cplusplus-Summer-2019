@@ -38,7 +38,11 @@ long long int factorial(unsigned int number);
 
 void vectorExample();
 
+void readAndAddLineNumbers();
+void howToReadAndWriteToAFile();
 
-
+int getTheNumber();
+int getTheNumber2();
+void stringstream();
 #endif /* moreFunctions_hpp */
 

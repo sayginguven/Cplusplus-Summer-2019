@@ -10,7 +10,9 @@
 #include <string>
 #include <iostream>
 #include <vector>
-
+#include <fstream>
+#include <sstream>
+#include <iomanip>
 
 bool isPrime(int value){
    
@@ -262,5 +264,188 @@ void vectorExample(){
     
 }
 
+void readAndAddLineNumbers(){
+    std::ifstream infile;
+    std::ofstream outfile;
+    
+    infile.open("../Files/PawPatrol.txt");
+    outfile.open("../Files/PawPatrolWithNumbers.txt");
+    
+    if (infile.fail()) {
+        std::cerr << "PawPatrol.txt is not readable." << std::endl;
+    }
+    
+    if (outfile.fail()) {
+        std::cerr << "copy process failed!" << std::endl;
+    }
+    
+    std::string line;
+    int lineNumber{ 1 };
+    
+    while(std::getline(infile, line)){
+        
+        outfile << std::setw(4) << std::left << lineNumber << line << std::endl;
+        lineNumber += 1;
+        
+    }
+    //another way
+    //    char c;
+    //    int i = 1 ;
+    //    outfile << i++ << " ";
+    //    while(infile.get(c)){
+    //
+    //        outfile << c;
+    //
+    //        if(c == '\n'){
+    //            outfile << i << " ";
+    //            i+=1;
+    //        }
+    //    }
+    //
+    
+    std::cout << "copy process completed successfully." << std::endl;
+    
+    infile.close();
+    outfile.close();
+
+}
 
 
+void howToReadAndWriteToAFile(){
+        std::ifstream filemanager;
+    
+        filemanager.open("../Files/test.txt", std::ios::in);
+    
+        if(!filemanager){
+            std::cerr << "error : file not found" << std::endl;
+            return ;
+        }
+    
+    
+        std::string name;
+        int age;
+        bool isItLie;
+    
+    
+    
+        std::cout << "File summary with format" << std::endl;
+        std::cout << "_____________________________" <<std::endl;
+    
+        //while(!filemanager.eof()) v1.0
+        while(filemanager >> name >> age >> isItLie){
+    
+            //#include <iomanip>
+            std::cout <<  "name : " << std::left << std::setw(10) << name;
+            std::cout << "| age is : " << std::setw(4) << age << std::right;
+            std::cout << "| the information is " << std::boolalpha << isItLie << std::endl;
+    
+        }
+    
+        //close
+        filemanager.close();
+    
+    
+        //open the file
+        filemanager.open("../Files/test.txt");
+    
+        std::string line;
+    
+        std::cout << "\nFile summary without format" << std::endl;
+        std::cout << "_____________________________" <<std::endl;
+    
+        while(std::getline(filemanager, line)){
+            std::cout << line << std::endl;
+        }
+    
+        filemanager.close();
+    
+    
+    
+    
+        //open the file
+        filemanager.open("../Files/test.txt");
+    
+        char c;
+    
+        while(filemanager.get(c)){
+            std::cout << c;
+        }
+    
+        filemanager.close();
+    
+    
+    
+        std::ofstream writeFile;
+    
+        writeFile.open("../Files/myFile.txt", std::ios::app);
+    
+        if(writeFile.is_open()){
+            std::cout << "file is open and ready for writing" << std::endl;
+        }
+    
+    
+        std::cout << "enter some string <0 to exit>";
+        while (std::getline(std::cin, line)){
+            if (line == "0") {
+                break;
+            }
+            writeFile << line << std::endl;
+        }
+    
+        writeFile.close();
+}
+
+
+int getTheNumber() {
+    
+    int number;
+    
+    std::cout << "enter your choice : ";
+    std::cin >> number;
+    
+    while (!std::cin.good()) {
+        std::cout << "Ops, not an integer value, try again: ";
+        std::cin.clear();
+        std::cin.ignore(INT_MAX, '\n');
+        std::cin >> number;
+    }
+    
+    return number;
+}
+
+int getTheNumber2(){
+    
+    int numberCheck;
+    std::string value;
+    std::cout << "give me a number" << std::endl;
+    std::cin >> value;
+    
+    std::istringstream storedValue{value};
+    
+    
+    if(storedValue >> numberCheck){
+        return numberCheck;
+    } else{
+        return -1;
+    }
+    
+}
+
+
+void stringstream(){
+        //string stream
+        std::string a;
+        int b;
+        double c;
+        bool d;
+        //                a     b c    d
+        std::string str {"hello 5 3.75 1"};
+        std::istringstream stringStream {str};
+    
+        stringStream >> a >> b >> c >> d;
+    
+        std::cout << "a value is " << a << std::endl;
+        std::cout << "b value is " << b << std::endl;
+        std::cout << "c value is " << c << std::endl;
+        std::cout << "d value is " << std::boolalpha << d << std::endl;
+}
