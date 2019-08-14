@@ -15,18 +15,11 @@
 
 int main() {
     
-    Person a;
+    Person *a = new Person{"saygin","guven","sayginguven@gmail.com","604 700 43 42", "Vancouver", 105};
     
-    //Account(unsigned int number, int type[], double balance[], int branchNumber, Person holder);
-    
-    int typeArr[3] {1,2,3};
-    double balanceArr[3] {1000,0,0};
-    
-    //Account acc1(1,typeArr, new double[3] {1000,0,0},1,a);
-    
-    //a checking 1000 CAD
-    //a saving ?
-    //a master ?
+    (*a).toString();
+    a->toString();
+
     
     return 0;
 }
