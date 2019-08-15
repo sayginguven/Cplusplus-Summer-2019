@@ -22,6 +22,7 @@
 
 #include <iostream>
 #include <string>
+#include <cstring>
 
 //global variables
 const int stackSizeStaticArr = 100;
