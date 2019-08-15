@@ -32,6 +32,7 @@ Account::Account(unsigned int number, std::vector<int> type, std::vector<double>
 }
 //copy constructor
 Account::Account(Account const &obj){
+    //change shallow copy to deep copy
     this->number = obj.number;
     this->type = obj.type;
     this->balance = obj.balance;
@@ -80,16 +81,56 @@ Person Account::getPerson(){
 
 //functions ~ methods
 bool Account::deposit(double amount, int type){
+    
+    if(amount <= 0 ){
+        std::cout << "MESSAGE: amount should be greater than 0" <<std::endl;
+        std::cout << "Transaction canceled" <<std::endl;
+        return false;
+    }
+    
+    if(amount > 1000 ){
+        std::cout << "MESSAGE: amount should be less than 1,000.00 CAD" <<std::endl;
+        std::cout << "Transaction canceled" <<std::endl;
+        return false;
+    }
+    
     this->balance.at(type) += amount;
     return true;
 }
 
 bool Account::withdrawl(double amount,int type){
+    if(amount > this->balance.at(type)){
+        std::cout << "There is only "<< this->balance.at(type) << " CAD amount "
+        <<" in your account"<<std::endl;
+        std::cout << "withrawl " << amount << " CAD is canceled." <<std::endl;
+        return false;
+    }
+    
+    if(amount <= 0 ){
+        std::cout << "MESSAGE: amount should be greater than 0" <<std::endl;
+        std::cout << "Transaction canceled" <<std::endl;
+        return false;
+    }
+    
     this->balance.at(type) -= amount;
     return true;
 }
 
 bool Account::transfer(double amount, int source, int destination){
+    
+    if(amount <= 0 ){
+        std::cout << "MESSAGE: amount should be greater than 0" <<std::endl;
+        std::cout << "Transaction canceled" <<std::endl;
+        return false;
+    }
+    
+    if(amount > this->balance.at(source)){
+        std::cout << "MESSAGE: insufficient amount" <<std::endl;
+        std::cout << "There is only "<< this->balance.at(source) << " CAD amount "
+        <<" in your account"<<std::endl;
+        std::cout << "Transaction canceled" <<std::endl;
+        return false;
+    }
     
     this->balance.at(source) -= amount;
     this->balance.at(destination) += amount;

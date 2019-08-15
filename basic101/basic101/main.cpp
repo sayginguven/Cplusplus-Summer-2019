@@ -20,12 +20,16 @@ int main() {
 //    (*myPerson).toString();
 //    myPerson->toString();
     
-    Account myAccount(1, {0,1,2}, {100.05,250.95,500.02}, 123, myPerson);
-//
-//    myAccount.deposit(156.98, 0);
-//    myAccount.withdrawl(200, 0);
-    myAccount.transfer(99, 0, 1);
-
+    Account myAccount(1, {0,1,2}, {1000,200,300}, 123, myPerson);
+    
+    //Account test(myAccount);
+    
+//    myAccount.~Account();
+//    
+//    test.getPerson().toString();
+    
+    //myAccount.transfer(2500, 0, 1);
+    
     myAccount.toString();
     
     
