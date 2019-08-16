@@ -98,13 +98,13 @@ unsigned int Person::getId(){
 //function ~ methods
 void Person::toString(){
     
-    std::cout << "[ "
+    std::cout << "["
     << " name : " << this->name
     << ", lastName : " << this->lastName
     << ", email : " << this->email
     << ", phone : " << this->phone
     << ", address : " << this->address
     << ", id : " << this->id
-    << "]" <<std::endl;
+    << " ]" <<std::endl;
     
 }

@@ -12,6 +12,7 @@
 #include "../OOP/Employee.hpp"
 #include "../OOP/Account/Account.hpp"
 #include "../OOP/Person/Person.hpp"
+#include <fstream>
 
 int main() {
     
@@ -21,17 +22,18 @@ int main() {
 //    myPerson->toString();
     
     Account myAccount(1, {0,1,2}, {1000,200,300}, 123, myPerson);
+    //myAccount.toString();
+
+    Account copyAccount(myAccount);
+
     
-    //Account test(myAccount);
+    copyAccount.toString();
     
-//    myAccount.~Account();
-//    
-//    test.getPerson().toString();
+    //copyAccount.transfer(2500, 0, 1);
     
-    //myAccount.transfer(2500, 0, 1);
+    //copyAccount.toString();
     
-    myAccount.toString();
-    
-    
+
     return 0;
 }
+

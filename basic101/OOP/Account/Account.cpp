@@ -10,6 +10,7 @@
 #include "../Person/Person.hpp"
 #include <iostream>
 #include <iomanip>
+#include <math.h>
 
 //default constructor
 Account::Account()
@@ -31,13 +32,9 @@ Account::Account(unsigned int number, std::vector<int> type, std::vector<double>
     
 }
 //copy constructor
-Account::Account(Account const &obj){
-    //change shallow copy to deep copy
-    this->number = obj.number;
-    this->type = obj.type;
-    this->balance = obj.balance;
-    this->branchNumber = obj.branchNumber;
-    this->holder = obj.holder;
+Account::Account(Account const &obj)
+:Account(obj.number , obj.type , obj.balance , obj.branchNumber ,new Person(*obj.holder) ){
+    //new Person for the holder pointer will create deep copy
 }
 //destructor
 Account::~Account(){
@@ -148,7 +145,7 @@ void Account::toString(){
     
     for (int i = 0; i< this->balance.size(); i+=1) {
         std::cout << std::left <<"  Account " << i
-        << std::right << std::setw(10) << this->balance.at(i)
+        << std::right << std::setw(15) <<std::setprecision(2)<<std::fixed<< this->balance.at(i)
         << " CAD" <<std::endl;
     }
     
