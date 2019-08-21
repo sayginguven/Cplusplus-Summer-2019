@@ -19,6 +19,10 @@
 #include "../OOP/Employee.hpp"
 #include "../OOP/Shallow.h"
 #include "../OOP/Deep.h"
+#include "../OOP/Person/Person.hpp"
+#include "../OOP/Account/Account.hpp"
+#include "../OOP/Animals/Animals.cpp"
+#include "../OOP/Shapes/Shapes.cpp"
 
 #include <iostream>
 #include <string>
@@ -446,4 +450,66 @@ void printObject(Shallow obj) {
 
 void printObject(Deep obj) {
     std::cout << obj.getData();
+}
+
+void PersonTest(){
+    Person *myPerson = new Person{"saygin","guven","sayginguven@gmail.com","604 700 43 42", "Vancouver", 105};
+    
+    //same result different way to reach data
+    //    (*myPerson).toString();
+    //    myPerson->toString();
+    
+    Account myAccount(1, {0,1,2}, {1000,200,300}, 123, myPerson);
+    //myAccount.toString();
+    
+    Account copyAccount(myAccount);
+    
+    
+    copyAccount.toString();
+    
+    //copyAccount.transfer(2500, 0, 1);
+    
+    //copyAccount.toString();
+}
+
+void AnimalTest(){
+    Mouse mouse;
+    Bird bird;
+    Dog dog;
+    
+    //static binding
+    std::cout << "static binding" << std::endl;
+    mouse.sound();
+    bird.sound();
+    dog.sound();
+    
+    //dynamic binding
+    std::cout << "dynamic binding" << std::endl;
+    Animal * animals[3];
+    animals[0] = &mouse;
+    animals[1] = &bird;
+    animals[2] = &dog;
+    
+    for (auto animal : animals){
+        animal->sound();
+    }
+    
+    std::cout << "sound function with pointers" << std::endl;
+    
+    Animal * animalptr[] = {new Mouse(), new Bird(), new Dog()};
+    for (auto animal : animalptr){
+        animal->sound();
+        (*animal).sound();
+    }
+}
+
+void ShapeTest(){
+    std::vector<Shape *> shapes;
+    shapes.push_back(new Circle());
+    shapes.push_back(new Rectangle());
+    shapes.push_back(new Triangle());
+    
+    for (auto shape : shapes ) {
+        shape->draw();
+    }
 }

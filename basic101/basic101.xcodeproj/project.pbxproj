@@ -10,6 +10,8 @@
 		3C0147DC22FB416B003A8699 /* Time.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3C0147DA22FB416B003A8699 /* Time.cpp */; };
 		3C16D24622EF5139007E340C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3C16D24522EF5139007E340C /* main.cpp */; };
 		3C16D24E22EF7118007E340C /* functions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3C16D24C22EF7118007E340C /* functions.cpp */; };
+		3C615FFB230DA5BF0036FBEF /* Animals.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3C615FFA230DA5BF0036FBEF /* Animals.cpp */; };
+		3C615FFE230DB1730036FBEF /* Shapes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3C615FFD230DB1730036FBEF /* Shapes.cpp */; };
 		3C974C1E23046FFE004E143E /* Account.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3C974C1C23046FFE004E143E /* Account.cpp */; };
 		3C974C2123047094004E143E /* Person.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3C974C1F23047094004E143E /* Person.cpp */; };
 		3CA45D2C22F4B75A00A11509 /* Cat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3CA45D2A22F4B75A00A11509 /* Cat.cpp */; };
@@ -40,6 +42,8 @@
 		3C16D24D22EF7118007E340C /* functions.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = functions.hpp; sourceTree = "<group>"; };
 		3C35579A23031729004157AA /* PawPatrol.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = PawPatrol.txt; sourceTree = "<group>"; };
 		3C35579C230322B8004157AA /* littleRed.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = littleRed.txt; sourceTree = "<group>"; };
+		3C615FFA230DA5BF0036FBEF /* Animals.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Animals.cpp; sourceTree = "<group>"; };
+		3C615FFD230DB1730036FBEF /* Shapes.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Shapes.cpp; sourceTree = "<group>"; };
 		3C974C1C23046FFE004E143E /* Account.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Account.cpp; sourceTree = "<group>"; };
 		3C974C1D23046FFE004E143E /* Account.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Account.hpp; sourceTree = "<group>"; };
 		3C974C1F23047094004E143E /* Person.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Person.cpp; sourceTree = "<group>"; };
@@ -102,6 +106,22 @@
 			path = Files;
 			sourceTree = "<group>";
 		};
+		3C615FF9230DA5A50036FBEF /* Animals */ = {
+			isa = PBXGroup;
+			children = (
+				3C615FFA230DA5BF0036FBEF /* Animals.cpp */,
+			);
+			path = Animals;
+			sourceTree = "<group>";
+		};
+		3C615FFC230DB1600036FBEF /* Shapes */ = {
+			isa = PBXGroup;
+			children = (
+				3C615FFD230DB1730036FBEF /* Shapes.cpp */,
+			);
+			path = Shapes;
+			sourceTree = "<group>";
+		};
 		3C974C1A23046796004E143E /* Account */ = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +143,8 @@
 		3CA45D2922F4B70200A11509 /* OOP */ = {
 			isa = PBXGroup;
 			children = (
+				3C615FFC230DB1600036FBEF /* Shapes */,
+				3C615FF9230DA5A50036FBEF /* Animals */,
 				3C974C1B23046FDB004E143E /* Person */,
 				3C974C1A23046796004E143E /* Account */,
 				3C032EC222FDD69B00A54333 /* Shallow.h */,
@@ -195,12 +217,14 @@
 			files = (
 				3CA45D2C22F4B75A00A11509 /* Cat.cpp in Sources */,
 				3C16D24622EF5139007E340C /* main.cpp in Sources */,
+				3C615FFB230DA5BF0036FBEF /* Animals.cpp in Sources */,
 				3C974C2123047094004E143E /* Person.cpp in Sources */,
 				3CE64D5022F1F421002C47EE /* moreFunctions.cpp in Sources */,
 				3C974C1E23046FFE004E143E /* Account.cpp in Sources */,
 				3C16D24E22EF7118007E340C /* functions.cpp in Sources */,
 				3C0147DC22FB416B003A8699 /* Time.cpp in Sources */,
 				3CFC8E4F22FCA2690074AB2F /* Employee.cpp in Sources */,
+				3C615FFE230DB1730036FBEF /* Shapes.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

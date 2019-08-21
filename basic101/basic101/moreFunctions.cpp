@@ -422,7 +422,7 @@ int getTheNumber2(){
     
     std::istringstream storedValue{value};
     
-    
+    //storedValue >> ID >> PhoneNumber >>
     if(storedValue >> numberCheck){
         return numberCheck;
     } else{
@@ -449,3 +449,4 @@ void stringstream(){
         std::cout << "c value is " << c << std::endl;
         std::cout << "d value is " << std::boolalpha << d << std::endl;
 }
+

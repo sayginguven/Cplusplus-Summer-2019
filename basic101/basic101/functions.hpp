@@ -23,4 +23,6 @@ void stackMenuWithPointer();
 void catTest();
 void timeTest();
 void employeeTest();
-
+void PersonTest();
+void AnimalTest();
+void ShapeTest();
