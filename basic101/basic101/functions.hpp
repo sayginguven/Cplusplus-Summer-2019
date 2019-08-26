@@ -26,3 +26,4 @@ void employeeTest();
 void PersonTest();
 void AnimalTest();
 void ShapeTest();
+void PlayerTest();

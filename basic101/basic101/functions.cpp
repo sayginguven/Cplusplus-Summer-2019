@@ -23,6 +23,7 @@
 #include "../OOP/Account/Account.hpp"
 #include "../OOP/Animals/Animals.cpp"
 #include "../OOP/Shapes/Shapes.cpp"
+#include "../OOP/OperatorOverloading/Player.hpp"
 
 #include <iostream>
 #include <string>
@@ -511,5 +512,32 @@ void ShapeTest(){
     
     for (auto shape : shapes ) {
         shape->draw();
+    }
+}
+
+
+void PlayerTest(){
+    const Player wizzard(100, 99, 0.8);
+    const Player wolf(40, 10, 1.6/2);
+    const Player boosterMagician(20,9999,2.0);
+    
+    const Player wolfman = wizzard + wolf * boosterMagician;
+    std::cout << wolfman << std::endl;
+    
+    
+    Player empty;
+    std::cout << "provide health, xp, boost info in the same order" << std::endl;
+    std::cin >> empty;
+    std::cout << empty <<std::endl;
+    
+    
+    
+    Player hero1(100,50,1.0);
+    Player hero2(100,50,1.0);
+    
+    if( hero1 != hero2 ) {
+        std::cout << "hero 1 and 2 are NOT same "<<std::endl;
+    } else{
+        std::cout << "hero 1 and 2 are same "<<std::endl;
     }
 }
