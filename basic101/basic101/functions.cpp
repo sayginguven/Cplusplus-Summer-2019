@@ -541,3 +541,21 @@ void PlayerTest(){
         std::cout << "hero 1 and 2 are same "<<std::endl;
     }
 }
+
+void LambdaTest(){
+    
+    //c way to create a lambda or with pointers
+    void(*cwayLabda)() = [](){
+        std::cout << "I am lambda" << std::endl;
+    };
+    
+    //c++ way to create a lambda
+    std::function<void()> lambda = [](){
+        std::cout << "I am lambda" << std::endl;
+    };
+    
+    //c++ autoway to create a labda
+    auto autoLambda = [](){
+        std::cout << "I am lambda" << std::endl;
+    };
+}

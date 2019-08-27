@@ -27,3 +27,4 @@ void PersonTest();
 void AnimalTest();
 void ShapeTest();
 void PlayerTest();
+void LambdaTest();
