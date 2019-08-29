@@ -28,3 +28,4 @@ void AnimalTest();
 void ShapeTest();
 void PlayerTest();
 void LambdaTest();
+void RectangleTest();

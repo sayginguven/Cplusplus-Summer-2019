@@ -24,11 +24,11 @@ class Circle : public Shape{
     virtual ~Circle(){};
 };
 
-class Rectangle : public Shape{
+class Square : public Shape{
     virtual void draw() override{
-        std::cout << "I am drawing a rectangle" << std::endl;
+        std::cout << "I am drawing a square" << std::endl;
     }
-    virtual ~Rectangle(){};
+    virtual ~Square(){};
 };
 
 class Triangle : public Shape{

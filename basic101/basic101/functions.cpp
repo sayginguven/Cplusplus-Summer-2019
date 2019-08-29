@@ -24,6 +24,7 @@
 #include "../OOP/Animals/Animals.cpp"
 #include "../OOP/Shapes/Shapes.cpp"
 #include "../OOP/OperatorOverloading/Player.hpp"
+#include "../OOP/Lambda/Rectangle.hpp"
 
 #include <iostream>
 #include <string>
@@ -507,7 +508,7 @@ void AnimalTest(){
 void ShapeTest(){
     std::vector<Shape *> shapes;
     shapes.push_back(new Circle());
-    shapes.push_back(new Rectangle());
+    shapes.push_back(new Square());
     shapes.push_back(new Triangle());
     
     for (auto shape : shapes ) {
@@ -548,14 +549,51 @@ void LambdaTest(){
     void(*cwayLabda)() = [](){
         std::cout << "I am lambda" << std::endl;
     };
+    cwayLabda();
     
     //c++ way to create a lambda
     std::function<void()> lambda = [](){
         std::cout << "I am lambda" << std::endl;
     };
+    lambda();
     
     //c++ autoway to create a labda
     auto autoLambda = [](){
         std::cout << "I am lambda" << std::endl;
     };
+    autoLambda();
+}
+
+void RectangleTest(){
+    
+    
+    std::cout << "Creating a rectangle with length 1 and width 2" <<std::endl;
+    Rectangle incrementRec(1,2);
+    std::cout << "incrementing the rectangel with ++ operator" <<std::endl;
+    incrementRec++;
+    std::cout << "Printing the rectangle ++ object" <<std::endl;
+    std::cout << incrementRec;
+    
+    std::cout << "_____________" <<std::endl;
+    std::cout << "Creating the Rectangle vector and printing them" <<std::endl;
+    std::cout << "_____________" <<std::endl;
+
+
+    std::vector<Rectangle> rectangles
+    {
+        Rectangle(4.0,5.0),
+        Rectangle(2.0,6.1),
+        Rectangle(7.3,2.5),
+        Rectangle(5.2,6.1)
+    };
+    
+    
+    Rectangle::ForEach(rectangles, [](Rectangle rec){
+        
+        std::cout << rec;
+        std::cout << "area of rectagle : " << rec.area() << std::endl;
+        std::cout << "surface of rectagle : " << rec.surface() << std::endl;
+        std::cout << "_______________\n" << std::endl;
+        
+    });
 }

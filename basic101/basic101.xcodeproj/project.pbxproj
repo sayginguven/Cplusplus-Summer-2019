@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3C0147DC22FB416B003A8699 /* Time.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3C0147DA22FB416B003A8699 /* Time.cpp */; };
 		3C16D24E22EF7118007E340C /* functions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3C16D24C22EF7118007E340C /* functions.cpp */; };
+		3C3458522316F87B0009C3A4 /* Rectangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3C3458502316F87B0009C3A4 /* Rectangle.cpp */; };
 		3C615FFB230DA5BF0036FBEF /* Animals.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3C615FFA230DA5BF0036FBEF /* Animals.cpp */; };
 		3C615FFE230DB1730036FBEF /* Shapes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3C615FFD230DB1730036FBEF /* Shapes.cpp */; };
 		3C81B9CD231461B7001E0DA1 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3C81B9CB231461B7001E0DA1 /* Player.cpp */; };
@@ -40,6 +41,8 @@
 		3C16D24222EF5139007E340C /* basic101 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = basic101; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C16D24C22EF7118007E340C /* functions.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = functions.cpp; sourceTree = "<group>"; };
 		3C16D24D22EF7118007E340C /* functions.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = functions.hpp; sourceTree = "<group>"; };
+		3C3458502316F87B0009C3A4 /* Rectangle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Rectangle.cpp; sourceTree = "<group>"; };
+		3C3458512316F87B0009C3A4 /* Rectangle.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Rectangle.hpp; sourceTree = "<group>"; };
 		3C35579A23031729004157AA /* PawPatrol.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = PawPatrol.txt; sourceTree = "<group>"; };
 		3C35579C230322B8004157AA /* littleRed.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = littleRed.txt; sourceTree = "<group>"; };
 		3C615FFA230DA5BF0036FBEF /* Animals.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Animals.cpp; sourceTree = "<group>"; };
@@ -100,6 +103,15 @@
 			path = basic101;
 			sourceTree = "<group>";
 		};
+		3C34584F2316F8510009C3A4 /* Lambda */ = {
+			isa = PBXGroup;
+			children = (
+				3C3458502316F87B0009C3A4 /* Rectangle.cpp */,
+				3C3458512316F87B0009C3A4 /* Rectangle.hpp */,
+			);
+			path = Lambda;
+			sourceTree = "<group>";
+		};
 		3C5FAAA42301C8D30011B512 /* Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +167,7 @@
 		3CA45D2922F4B70200A11509 /* OOP */ = {
 			isa = PBXGroup;
 			children = (
+				3C34584F2316F8510009C3A4 /* Lambda */,
 				3C81B9CA2314617C001E0DA1 /* OperatorOverloading */,
 				3C615FFC230DB1600036FBEF /* Shapes */,
 				3C615FF9230DA5A50036FBEF /* Animals */,
@@ -239,6 +252,7 @@
 				3C95520E23158FEC0049BB6D /* main.cp in Sources */,
 				3CFC8E4F22FCA2690074AB2F /* Employee.cpp in Sources */,
 				3C615FFE230DB1730036FBEF /* Shapes.cpp in Sources */,
+				3C3458522316F87B0009C3A4 /* Rectangle.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
