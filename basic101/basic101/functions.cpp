@@ -727,11 +727,11 @@ void SmartPointersTest(){
     icecream2 = std::move(icecream);
     
     
-        std::cout << "memory location of my object is : " << icecream2.get() << std::endl;
-        icecream2->setFlavor("chocolate");
-        std::cout << "the flavor changed to " << icecream2->getFlavor() << std::endl;
-    
-        icecream2.reset();//delete the unique pointer
+    std::cout << "memory location of my object is : " << icecream2.get() << std::endl;
+    icecream2->setFlavor("chocolate");
+    std::cout << "the flavor changed to " << icecream2->getFlavor() << std::endl;
+
+    icecream2.reset();//delete the unique pointer
     
     std::cout << "_____________\n";
     //unqie pointers can not assign to another unique pointer
@@ -760,27 +760,38 @@ void SmartPointersTest(){
     
     
     
-        std::shared_ptr<IceCream> sharedIceCream1 = std::make_shared<IceCream>("mapple and oat cookie");
-    
-        std::shared_ptr<IceCream> sharedIceCream2 = sharedIceCream1;
-    
-        std::weak_ptr<IceCream> weakPointer = sharedIceCream2;
-        
-        //you need to lock the shared pointer if you assign it to weak pointer
-        auto lockedPtr = weakPointer.lock();
+    std::shared_ptr<IceCream> sharedIceCream1 = std::make_shared<IceCream>("mapple and oat cookie");
+    std::shared_ptr<IceCream> sharedIceCream2 = sharedIceCream1;
+
+    std::weak_ptr<IceCream> weakPointer = sharedIceCream2;
+    sharedIceCream1.reset();
+    sharedIceCream2.reset();
+
+    //you need to lock the shared pointer if you assign it to weak pointer
+    //if use count is not 0 weak pointer will work
+    if( auto lockedPtr = weakPointer.lock()){
         std::cout << lockedPtr->getFlavor();
-        std::cout <<"\n\n";
+    } else{
+        
+        std::cout << "weak pointer is expired" << std::endl;
+        std::cout << "Is weak pointer is : weakPointer.expired() ? " << std::boolalpha <<          weakPointer.expired() << std::endl;
+        
+    }
 
-    
-    
-        //weak pointer will not increment use count
-        std::cout << "weak pointer added : " << sharedIceCream1.use_count(); // 2
-   
-    
-        sharedIceCream1.reset();// count 1
-        sharedIceCream2.reset();// count 0
-        std::cout << "after pointer resets : " <<sharedIceCream1.use_count() << std::endl;
-    
+    std::cout <<"\n\n";
 
-    
+
+
+    //weak pointer will not increment use count
+    std::cout << "weak pointer added : " << sharedIceCream1.use_count(); // 2
+
+
+    sharedIceCream1.reset();// count 1
+    sharedIceCream2.reset();// count 0
+    std::cout << "after pointer resets : " <<sharedIceCream1.use_count() << std::endl;
+
+
+
 }
+
+

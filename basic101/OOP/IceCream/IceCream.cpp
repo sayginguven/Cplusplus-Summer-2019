@@ -9,9 +9,6 @@
 #include "IceCream.hpp"
 
 
-
-
-
 IceCream::IceCream(){
         this->flavor = "vanilla";
         std::cout <<"Icecream is created with " << this->flavor << std::endl;

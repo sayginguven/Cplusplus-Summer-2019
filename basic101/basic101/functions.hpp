@@ -8,6 +8,13 @@
 
 #pragma once
 #include <string>
+#include <iostream>
+
+template<typename T1, typename T2>
+void printThis(T1 value1, T2 value2){
+    std::cout << "you typed " << value1 << " " << value2  << std::endl;
+    
+}
 
 void someDataTypes(void);
 void stackMenuWithStaticArr();

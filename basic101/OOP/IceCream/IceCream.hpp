@@ -24,6 +24,11 @@ public:
     void setFlavor(std::string flavor);
     
     ~IceCream();
+
+    friend std::ostream &operator <<(std::ostream &os, const IceCream &obj){
+        os << "the flavor of icecream is " << obj.flavor;
+        return os;
+    }
 };
 
 
