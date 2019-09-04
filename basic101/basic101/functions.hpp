@@ -29,3 +29,7 @@ void ShapeTest();
 void PlayerTest();
 void LambdaTest();
 void RectangleTest();
+void ClosureTest();
+void ForEachFunction(std::vector<int> &numbers,std::function<void(int)> func);
+void ForEachFunctionTest();
+void SmartPointersTest();

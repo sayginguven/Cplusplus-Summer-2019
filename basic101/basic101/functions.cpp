@@ -25,10 +25,19 @@
 #include "../OOP/Shapes/Shapes.cpp"
 #include "../OOP/OperatorOverloading/Player.hpp"
 #include "../OOP/Lambda/Rectangle.hpp"
+#include "../OOP/IceCream/IceCream.hpp"
 
 #include <iostream>
 #include <string>
 #include <cstring>
+#include <functional>
+#include <sstream>
+#include <chrono>
+#include <thread>
+#include <memory>
+#include <vector>
+
+
 
 //global variables
 const int stackSizeStaticArr = 100;
@@ -596,4 +605,182 @@ void RectangleTest(){
         std::cout << "_______________\n" << std::endl;
         
     });
+}
+
+
+
+std::function<void()> func() {
+    
+    int i = 0;
+    
+    return [i]() mutable {
+        std::cout << "lambda function, i : " << i << std::endl;
+        i += 1;
+    };
+}
+
+template< class Rep, class Period>
+void countDown(std::string message, const std::chrono::duration<Rep, Period>& sleep_duration) {
+    for (char c : message) {
+        std::cout << c;
+        std::this_thread::sleep_for(sleep_duration);
+    }
+}
+
+void ClosureTest(){
+    /*auto closureFunc = func();
+     
+     closureFunc();*/
+    using namespace std::literals::chrono_literals;
+    
+    
+    std::string str = "Hi guys,\n\n";
+    str += "Did you figure it out?\n\n";
+    str += "For closure you need to use lambda and function pointers.\n\n";
+    str += "I prepared a closure example. ";
+    str += "This is how you code in a creative way.\n";
+    str += "I hope you like it.\n\n";
+    countDown(str, 0.1s);
+    
+    str = "";
+    str += "                 __ \n";
+    str += "                / _)\n";
+    str += "       _.----._/ /  \n";
+    str += "      /         /      \n";
+    str += "   __/   ( |  ( |      \n";
+    str += "  /__.-''|_|--|_|      Lets Code!\n\n\n";
+    
+    countDown(str, 0.1s);
+    
+    str = "Please wait, we are preparing the code for you. ";
+    str += "It will take couple seconds to load the code! Thank you for your patience\n\n";
+    countDown(str, 0.1s);
+    
+    str = "";
+    for (int i = 10; i > 0; i -= 1) {
+        str += '.';
+    }
+    std::cout << "Loading";
+    countDown(str, 0.5s);
+    
+    
+    
+    str = "\n\n\n#include <iostream>\n";
+    str += "#include <string>\n";
+    str += "#include <functional>\n\n\n";
+    str += "std::function<void()> func() {\n";
+    str += "   int i = 0;\n";
+    str += "   return [i]() mutable{\n";
+    str += "     std::cout << \"lambda function, i : \" << i << std::endl;\n";
+    str += "     i += 1;\n";
+    str += "   };\n";
+    str += "}\n\n\n\n";
+    str += "int main(){\n\n";
+    str += "   auto closureFunc = func(); //dont forget to add paranteses after func\n";
+    str += "   closureFunc();\n\n\n";
+    str += "   return 0;\n";
+    str += "}\n";
+    
+    countDown(str, 0.2s);
+    
+    
+    std::cin >> str;
+}
+
+
+void ForEachFunction(std::vector<int> &numbers,std::function<void(int)> func){
+    
+    for(int number: numbers){
+        func(number);
+    }
+    
+};
+void ForEachFunctionTest(){
+    std::vector<int> numbers = {1,2,3,4,5,6,7,8,9,10};
+    
+    //if you want to
+    int passByReference {0};
+    int passByValue {0};
+    
+    ForEachFunction(numbers,[&passByReference, passByValue](int number) mutable{
+        passByValue += 1;
+        std::cout << "size of this vector is " << passByValue << std::endl;
+        std::cout << "Value : " << passByReference << " " <<number << std::endl;
+        passByReference +=1;
+    });
+}
+
+
+void SmartPointersTest(){
+    
+    //unique pointer
+    //3 ways to declare
+    //1
+    std::unique_ptr<IceCream> icecream { new IceCream() };
+    //2
+    //    std::unique_ptr<IceCream> icecream = std::make_unique<IceCream>();
+    //3
+    //    auto icecream = std::make_unique<IceCream>();//recommended
+    
+    auto icecream2 = std::make_unique<IceCream>("cookie and cream");
+    
+    icecream2 = std::move(icecream);
+    
+    
+        std::cout << "memory location of my object is : " << icecream2.get() << std::endl;
+        icecream2->setFlavor("chocolate");
+        std::cout << "the flavor changed to " << icecream2->getFlavor() << std::endl;
+    
+        icecream2.reset();//delete the unique pointer
+    
+    std::cout << "_____________\n";
+    //unqie pointers can not assign to another unique pointer
+    //std::unique_ptr<IceCream> icecream2 { icecream } ; //error
+    
+    
+    
+    std::unique_ptr<IceCream> ice1 = std::make_unique<IceCream>("strawberry");
+    std::unique_ptr<IceCream> ice2 = std::make_unique<IceCream>("mango");
+    std::unique_ptr<IceCream> ice3 = std::make_unique<IceCream>("blueberry");
+
+    //store these ice creams in one container
+
+
+    std::vector<std::unique_ptr<IceCream>> ices;
+
+    //moving all the unique pointer values to ices vector
+    ices.push_back(std::move(ice1));
+    ices.push_back(std::move(ice2));
+    ices.push_back(std::move(ice3));
+
+
+    for(auto &icecream : ices){
+        std::cout << icecream->getFlavor() <<std::endl;
+    }
+    
+    
+    
+        std::shared_ptr<IceCream> sharedIceCream1 = std::make_shared<IceCream>("mapple and oat cookie");
+    
+        std::shared_ptr<IceCream> sharedIceCream2 = sharedIceCream1;
+    
+        std::weak_ptr<IceCream> weakPointer = sharedIceCream2;
+        
+        //you need to lock the shared pointer if you assign it to weak pointer
+        auto lockedPtr = weakPointer.lock();
+        std::cout << lockedPtr->getFlavor();
+        std::cout <<"\n\n";
+
+    
+    
+        //weak pointer will not increment use count
+        std::cout << "weak pointer added : " << sharedIceCream1.use_count(); // 2
+   
+    
+        sharedIceCream1.reset();// count 1
+        sharedIceCream2.reset();// count 0
+        std::cout << "after pointer resets : " <<sharedIceCream1.use_count() << std::endl;
+    
+
+    
 }

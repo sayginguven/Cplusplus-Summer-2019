@@ -17,6 +17,7 @@
 		3C974C1E23046FFE004E143E /* Account.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3C974C1C23046FFE004E143E /* Account.cpp */; };
 		3C974C2123047094004E143E /* Person.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3C974C1F23047094004E143E /* Person.cpp */; };
 		3CA45D2C22F4B75A00A11509 /* Cat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3CA45D2A22F4B75A00A11509 /* Cat.cpp */; };
+		3CAA004E23201EED00F2F5FB /* IceCream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3CAA004C23201EED00F2F5FB /* IceCream.cpp */; };
 		3CE64D5022F1F421002C47EE /* moreFunctions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3CE64D4E22F1F421002C47EE /* moreFunctions.cpp */; };
 		3CFC8E4F22FCA2690074AB2F /* Employee.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3CFC8E4D22FCA2690074AB2F /* Employee.cpp */; };
 /* End PBXBuildFile section */
@@ -56,6 +57,8 @@
 		3C974C2023047094004E143E /* Person.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Person.hpp; sourceTree = "<group>"; };
 		3CA45D2A22F4B75A00A11509 /* Cat.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Cat.cpp; sourceTree = "<group>"; };
 		3CA45D2B22F4B75A00A11509 /* Cat.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Cat.hpp; sourceTree = "<group>"; };
+		3CAA004C23201EED00F2F5FB /* IceCream.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = IceCream.cpp; sourceTree = "<group>"; };
+		3CAA004D23201EED00F2F5FB /* IceCream.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = IceCream.hpp; sourceTree = "<group>"; };
 		3CE64D4E22F1F421002C47EE /* moreFunctions.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = moreFunctions.cpp; sourceTree = "<group>"; };
 		3CE64D4F22F1F421002C47EE /* moreFunctions.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = moreFunctions.hpp; sourceTree = "<group>"; };
 		3CFC8E4D22FCA2690074AB2F /* Employee.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Employee.cpp; sourceTree = "<group>"; };
@@ -167,6 +170,7 @@
 		3CA45D2922F4B70200A11509 /* OOP */ = {
 			isa = PBXGroup;
 			children = (
+				3CAA004B23201EC900F2F5FB /* IceCream */,
 				3C34584F2316F8510009C3A4 /* Lambda */,
 				3C81B9CA2314617C001E0DA1 /* OperatorOverloading */,
 				3C615FFC230DB1600036FBEF /* Shapes */,
@@ -183,6 +187,15 @@
 				3CFC8E4E22FCA2690074AB2F /* Employee.hpp */,
 			);
 			path = OOP;
+			sourceTree = "<group>";
+		};
+		3CAA004B23201EC900F2F5FB /* IceCream */ = {
+			isa = PBXGroup;
+			children = (
+				3CAA004C23201EED00F2F5FB /* IceCream.cpp */,
+				3CAA004D23201EED00F2F5FB /* IceCream.hpp */,
+			);
+			path = IceCream;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,6 +265,7 @@
 				3C95520E23158FEC0049BB6D /* main.cp in Sources */,
 				3CFC8E4F22FCA2690074AB2F /* Employee.cpp in Sources */,
 				3C615FFE230DB1730036FBEF /* Shapes.cpp in Sources */,
+				3CAA004E23201EED00F2F5FB /* IceCream.cpp in Sources */,
 				3C3458522316F87B0009C3A4 /* Rectangle.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
