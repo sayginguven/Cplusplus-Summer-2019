@@ -40,3 +40,4 @@ void ClosureTest();
 void ForEachFunction(std::vector<int> &numbers,std::function<void(int)> func);
 void ForEachFunctionTest();
 void SmartPointersTest();
+void BeerTest();
