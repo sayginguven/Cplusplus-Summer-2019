@@ -41,3 +41,12 @@ void ForEachFunction(std::vector<int> &numbers,std::function<void(int)> func);
 void ForEachFunctionTest();
 void SmartPointersTest();
 void BeerTest();
+
+void calculateFuelConsumption(double kilometers, double liters);
+// function3 throws runtime error
+void function3();
+// function2 invokes function3
+void function2();
+// function1 invokes function2
+void function1();
+void ExceptionHandlingTest();

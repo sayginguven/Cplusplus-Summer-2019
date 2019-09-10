@@ -14,88 +14,79 @@
 #include <stdexcept>
 #include <vector>
 #include <string>
+#include <stdio.h>
+#include <time.h>
 
-void calculateFuelConsumption(double kilometers, double liters){
+
+std::string printMonth(int month){
+
+    std::string months[12] {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
     
-    
-    if(kilometers < 0){
-        throw std::logic_error("kilometers must be positive");
-    }
-    if(liters == 0){
-        throw std::invalid_argument("liters can not be 0");
-    }
-    
-    if(kilometers > 10000){
-        throw std::length_error("kilometers is too long!");
-    }
-    
-    std::cout << "your fuel consumption is " << 100*(liters/kilometers) << " lt/ per 100km" << std::endl;
+    return months[month];
 }
 
-// function3 throws runtime error
-void function3() {
-    std::cout << "In function 3" << std::endl;
- // no try block, stack unwinding occurs, return control to function2
-    throw std::runtime_error{"runtime_error in function3"}; // no print
+
+std::string printWeekDay(int weekDay){
+    
+    std::string weekdays[7] {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+    
+    return weekdays[weekDay];
+    
 }
 
-// function2 invokes function3
-void function2() {
-    std::cout << "function3 is called inside function2" << std::endl;
-    //function3(); // stack unwinding occurs, return control to function1
+std::string printDay(int day){
     
-    //try and catch before return control to function1
-    try{
-        function3();
-    } catch (std::exception &ex){
-        std::cout << "exception handled in function 2"<<std::endl;
+    if(day < 1 || day >31){
+        throw std::logic_error("hmmmm thats a wrong day");
     }
     
-    std::cout << "function2 ends" << std::endl;
+    std::string days[31] = {
+        "first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "ninth", "tenth",
+        "eleventh", "twelfth", "thirteenth", "fourteenth", "fifteenth", "sixteenth", "seventeenth", "eighteenth", "nineteenth", "twentieth",
+        "twenty-first", "twenty-second", "twenty-third", "twenty-fourth", "twenty-fifth", "twenty-sixth", "twenty-seventh", "twenty-eighth", "twenty-ninth", "thirtieth",
+        "thirty-first"
+    };
+    
+    return days[day-1];
+    
 }
 
-// function1 invokes function2
-void function1() {
-    std::cout << "function2 is called inside function1" << std::endl;
-    function2(); // stack unwinding occurs, return control to main
-    std::cout << "function1 ends" << std::endl;
-}
+
 
 int main() {
- 
+    
+    
+    //mySuperTime<int,int,int> bday(1992,2,5);
+   // mySuperTime<int,std::string,std::string> bday2(1992, "february", "fifth");
+    
+    
     try {
-        std::cout << "function1 is called inside main" << std::endl;
-        function1(); // call function1 which throws runtime_error
-    }
-    catch (const std::runtime_error& error) { // handle runtime error
-        std::cout << "Exception occurred: " <<  std::endl;
-        std::cout << "Exception handled in main" << std::endl;
-    }
-    std::cout << "bye" << std::endl;
+        time_t rawtime;
+        struct tm * timeinfo;
+        
+        time ( &rawtime );
+        timeinfo = localtime ( &rawtime );
+        
+        std::cout << timeinfo->tm_year+1900 << std::endl; // 2019-119 = 1900
+        std::cout << printMonth(timeinfo->tm_mon) << std::endl; // 0 - Jan, 1 - Feb
+        std::cout << printDay(timeinfo->tm_mday) << std::endl; // day of the month
+//        std::cout << printDay(32) << std::endl; // day of the month
 
-
-    while(true){
-        try{
-            std::cout << "how many kilometers you have travelled? " << std::endl;
-            double km;
-            std::cin >> km;
-            std::cout << "how many lites of fuel you have filled?" << std::endl;
-            double liters;
-            std::cin >> liters;
-            calculateFuelConsumption(km, liters); // error
-        } catch (std::invalid_argument &ex){
-            std::cout << ex.what() <<std::endl;
-        } catch(std::logic_error &ex){
-            std::cout << ex.what() <<std::endl;
-        } catch(...){
-            std::cout << " something is really wrong " <<std::endl;
-        }
+        std::cout << timeinfo->tm_hour << std::endl; // time hour
+        std::cout << timeinfo->tm_min << std::endl; // time minute
+        std::cout << timeinfo->tm_sec << std::endl; // time second
+        std::cout << printWeekDay(timeinfo->tm_wday) << std::endl; // week day - monday tuesday
+        std::cout << timeinfo->tm_yday << std::endl; // day of the year
+    } catch (std::logic_error &ex) {
+        std::cout << "ERROR : " << ex.what() << std::endl;
     }
     
     
-
-
 }
+
+
+
+
 
 
 

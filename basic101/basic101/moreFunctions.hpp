@@ -45,4 +45,3 @@ int getTheNumber();
 int getTheNumber2();
 void stringstream();
 #endif /* moreFunctions_hpp */
-
